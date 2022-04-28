@@ -1,0 +1,10 @@
+###
+# @name Incoming Voice Webhook
+POST https://localhost:7003/voice/incoming
+
+###
+# @name Outgoing Voice Webhook
+POST https://localhost:7003/voice/outgoing
+Content-Type: application/x-www-form-urlencoded
+
+To=%2B1234567890

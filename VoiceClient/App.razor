@@ -1,0 +1,51 @@
+﻿@{
+    var friendlyFolks = new[]
+    {
+        new {Name = "Niels", Company = "Twilio", Picture = "/img/niels.jpg", PhoneNumber = "+18455524247"},
+        new {Name = "Khalid", Company = "JetBrains", Picture = "/img/khalid.jpg", PhoneNumber = ""},
+        new {Name = "Maarten", Company = "JetBrains", Picture = "/img/maarten.jpg", PhoneNumber = ""},
+        new {Name = "Melikhaya Mzola", Company = "Cookie Technology", Picture = "/img/melikhaya.jpg", PhoneNumber = ""},
+        new {Name = "Jeremy", Company = "Heinz Beans", Picture = "/img/jeremy.jpg", PhoneNumber = ""},
+        new {Name = "Simi", Company = "", Picture = "/img/simi.jpg", PhoneNumber = ""},
+        new {Name = "Kevin", Company = "IntelliTect", Picture = "/img/kevin.jpg", PhoneNumber = ""},
+        new {Name = "Samson", Company = "JetBrains", Picture = "/img/samson.jpg", PhoneNumber = "+19378218566"},
+        new {Name = "Jack", Company = "Twilio", Picture = "/img/jack.jpg", PhoneNumber = "+18773573551"},
+        new {Name = "Maki", Company = "Twilio", Picture = "/img/maki.jpg", PhoneNumber = "+12764008151"},
+        new {Name = "Seamus", Company = "Rantt Media", Picture = "/img/seamus.jpg", PhoneNumber = "+12764008151"},
+        new {Name = "Jasmine", Company = "", Picture = "/img/jasmine.jpg", PhoneNumber = "+14454466525"},
+        new {Name = "Cookie", Company = "VMware Tanzu", Picture = "/img/cookie.jpg", PhoneNumber = "+19853137270"},
+    };
+}
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+    @foreach (var person in friendlyFolks.OrderBy(p => p.Name))
+    {
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="@person.Picture" alt="@person.Name" class="bd-placeholder-img card-img-top" width="100%" height="300"/>
+                <div class="card-body">
+                    <p class="card-text">
+                        @person.Name
+                        @if (!string.IsNullOrEmpty(person.Company))
+                        {
+                            <text> (@person.Company)</text>
+                        }
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button @onclick="() => OnCallClick(person.PhoneNumber)" type="button" class="btn btn-success">Call <i class="bi bi-telephone-fill"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<Dialer @ref="dialer"/>
+
+@code {
+    private Dialer dialer;
+
+    private void OnCallClick(string phoneNumber) => dialer.RequestCall(phoneNumber);
+}

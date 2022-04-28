@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Counter.razor" />
+    <_ContentIncludedByDefault Remove="Pages\FetchData.razor" />
+    <_ContentIncludedByDefault Remove="Pages\Index.razor" />
+    <_ContentIncludedByDefault Remove="Shared\MainLayout.razor" />
+    <_ContentIncludedByDefault Remove="wwwroot\sample-data\weather.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\FONT-LICENSE" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.eot" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.otf" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.ttf" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.woff" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\ICON-LICENSE" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\README.md" />
+  </ItemGroup>
+  
+  <Target Name="CopyTwilioVoiceJavaScript">
+    <Copy SourceFiles="node_modules/@twilio/voice-sdk/dist/twilio.min.js" DestinationFiles="wwwroot/js/twilio.min.js" SkipUnchangedFiles="true" />
+  </Target>
+</Project>

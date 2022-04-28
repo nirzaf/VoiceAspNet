@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RunProjects" type="CompoundRunConfigurationType">
+    <toRun name="ReverseProxy" type="LaunchSettings" />
+    <toRun name="TokenService" type="LaunchSettings" />
+    <toRun name="VoiceClient" type="LaunchSettings" />
+    <toRun name="WebhookService" type="LaunchSettings" />
+    <method v="2" />
+  </configuration>
+</component>

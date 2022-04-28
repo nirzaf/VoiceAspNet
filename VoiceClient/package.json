@@ -1,0 +1,9 @@
+{
+  "name": "voiceclient",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@twilio/voice-sdk": "^2.1.1"
+  }
+}

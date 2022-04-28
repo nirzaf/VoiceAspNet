@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Make phone calls with .NET</title>
+    <base href="/"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet"/>
+    <link href="VoiceClient.styles.css" rel="stylesheet"/>
+    <script src="js/twilio.min.js" async></script>
+</head>
+
+<body class="d-flex flex-column h-100">
+<main class="flex-shrink-0">
+    <div class="container">
+        <h1 class="mt-2">Make phone calls with .NET</h1>
+        <div id="app">Loading...</div>
+        <div id="blazor-error-ui">
+            An unhandled error has occurred.
+            <a href="" class="reload">Reload</a>
+            <a class="dismiss">x</a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer mt-auto py-1 bg-light">
+    <div class="container">
+        Made with <img src="/img/twilio.svg" width="100" height="50" alt="Twilio logo"/>
+    </div>
+</footer>
+
+<script src="_framework/blazor.webassembly.js"></script>
+</body>
+</html>
